@@ -35,12 +35,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public R save(User user) {
-        // todo 用户唯一
         Optional<User> byUsername = userRepository.findByUsername(user.getUsername());
         if (byUsername.isPresent()) {
             return R.errMsg("用户名已存在!");
         }
-        // todo md5加密
         user.setPassword(Md5Util.md5Encodeutf8(user.getPassword(), salt));//密码加密
 
         try {
