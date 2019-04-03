@@ -6,8 +6,6 @@ import com.user.repository.UserRepository;
 import com.user.service.UserService;
 import com.user.utils.Md5Util;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -19,7 +17,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-@Slf4j
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -29,9 +27,6 @@ public class UserServiceImpl implements UserService {
     private final StringRedisTemplate template;
 
     private static final String HEAD = "user:online:";
-
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
 
     private static final String salt = "rescxezvvry3456t";
 
@@ -55,7 +50,6 @@ public class UserServiceImpl implements UserService {
     public User findOne(Integer id) {
         Optional<User> optional = userRepository.findById(id);
         if (!optional.isPresent()) {//用户不存在
-            //todo 用户不存在抛出异常
             throw new UserNotFoundException("用户不存在");
         }
         return optional.get();
