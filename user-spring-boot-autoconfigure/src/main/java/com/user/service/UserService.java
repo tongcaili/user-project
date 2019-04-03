@@ -1,21 +1,27 @@
 package com.user.service;
 
+
 import com.user.pojo.User;
-import com.user.vo.R;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.lang.Nullable;
+
+
+import java.util.List;
 
 public interface UserService {
-    R save(User user);
+    User save(User user);
 
-    R page(Pageable pageable);
+    Page<User> page(Pageable pageable);
 
-    R findOne(Integer id);
+    @Nullable
+    User findOne(Integer id);
 
-    R update(User user);
+    User update(User user);
 
-    R delete(Integer id);
+    void delete(Integer id);
 
-    R login(User user);
+    User login(String username,String password);
 
-    R loginUsers();
+    List<String> loginUsers();
 }
