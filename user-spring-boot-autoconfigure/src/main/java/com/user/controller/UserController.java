@@ -73,7 +73,8 @@ public class UserController {
             @ApiImplicitParam(name = "username", value = "用户名", required = true),
             @ApiImplicitParam(name = "password", value = "密码", required = true)
     })
-    public ResponseEntity<User> login( String username,String password) {
+    public ResponseEntity<User> login(String username,String password) {
+        //todo 解决封装问题
         return ResponseEntity.ok().body(userService.login(username, password));
     }
 
