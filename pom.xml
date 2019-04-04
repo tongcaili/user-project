@@ -18,10 +18,25 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
+        <swagger.version>2.7.0</swagger.version>
     </properties>
     
     <modules>
         <module>user-spring-boot-starter</module>
         <module>user-spring-boot-autoconfigure</module>
     </modules>
+
+    <dependencies>
+        <!--swagger-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+    </dependencies>
 </project>

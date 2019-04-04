@@ -5,7 +5,6 @@ import com.user.pojo.User;
 import com.user.repository.UserRepository;
 import com.user.service.UserService;
 import com.user.utils.Md5Util;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.redis.core.StringRedisTemplate;
